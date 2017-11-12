@@ -139,11 +139,38 @@ body {
   width: 80%;
 }
 
-/* add-after-party */
+/* view-winner-venue */
+.view-winner-venue {
 
-.add-after-party {
 }
 
+.view-winner-venue__title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 5vh auto auto auto;
+}
+
+.view-winner-venue__label {
+  width: 90%;
+  font-size: .7rem;
+  margin: 5vh auto auto auto;
+}
+
+.view-winner-venue__winner {
+  width: 90%;
+  margin: .5rem auto auto auto;
+}
+
+.view-winner-venue__map {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #333;
+  height: 50vh;
+  width: 100%;
+}
+
+/* add-after-party */
 .add-after-party__title {
   text-align: center;
   font-size: 1.4rem;
@@ -163,6 +190,7 @@ body {
   font-size: 1.2rem;
 }
 
+/* form */
 .form {
   display: flex;
   flex-flow: column;
