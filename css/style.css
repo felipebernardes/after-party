@@ -1,0 +1,140 @@
+/* reset */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* font */
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i');
+
+/* base */
+html {
+  font-size: 16px;
+}
+
+body {
+  background: #101010;
+  color: #65FF88;
+  font-family: 'Space Mono', monospace;
+}
+
+.main-button {
+  background: rgba(101,255,136, .3);
+  color: #65FF88;
+  border: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  padding: .30rem .75rem;
+  max-width: 50%;
+}
+
+/* list */
+.list {
+  padding: 0;
+  list-style: none;
+  width: 90%;
+  margin: auto;
+}
+
+.list__item {
+  border-left: 6px solid #65FF88;
+  padding-left: 1rem;
+  position: relative;
+  margin: 1rem auto;
+}
+
+.list__item__title {
+  font-size: .9rem;
+}
+
+.list__item__detail {
+  font-size: .8rem;
+}
+
+.list__item__button {
+  position: absolute;
+  right: 0;
+  top: 55%;
+  transform: translateY(-50%);
+  background: rgba(101,255,136, .3);
+  color: #65FF88;
+  border: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: .9rem;
+  font-style: italic;
+  text-transform: uppercase;
+  padding: .15rem .45rem;
+}
+
+/* home */
+.home {
+  display: flex;
+  flex-flow: column;
+}
+
+.home__title {
+  margin: 5vh auto auto 5vw;
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.home__title__breakline {
+  display: block;
+}
+
+.home__intro {
+  margin: 5vh auto auto 5vw;
+}
+
+.home__quote {
+  font-style: italic;
+  text-align: center;
+  margin: 10vh auto auto auto;
+  font-size: 4vw;
+}
+
+.home .main-button {
+  margin: 15vh auto auto auto;
+}
+
+/* index */
+.index {
+  display: flex;
+  flex-flow: column;
+}
+
+.index__title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 5vh auto auto auto;
+}
+
+.index__missing-message {
+  text-align: center;
+  margin: 15vh 5vw auto 5vw;
+  display: none;
+}
+
+.index .list {
+  margin-top: 5vh;
+}
+
+.index .main-button {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  max-width: 80%;
+  width: 80%;
+}
