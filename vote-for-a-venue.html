@@ -4,27 +4,17 @@
     <meta charset="utf-8">
     <title>after party</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
-    <h1>gdg codelab</h1>
-    <ul>
-      <li>
-        <h2>venue 4</h2>
-        <p>6 votes</p>
-        <button type="button" name="button">vote</button>
-      </li>
-      <li>
-        <h2>venue 4</h2>
-        <p>6 votes</p>
-        <button type="button" name="button">vote</button>
-      </li>
-      <li>
-        <h2>venue 4</h2>
-        <p>6 votes</p>
-        <button type="button" name="button">vote</button>
+  <body class="vote">
+    <h1 class="vote__title">gdg codelab</h1>
+    <ul class="list" id="venue-list">
+      <li class="list__item">
+        <h2 class="list__item__title">venue 4</h2>
+        <p class="list__item__detail">6 votes</p>
+        <button class="list__item__button" type="button" name="button">vote</button>
       </li>
     </ul>
-    <button type="button" name="button">add an after party</button>
+    <script type="text/javascript" src="js/vote-for-a-venue.js"></script>
   </body>
 </html>
