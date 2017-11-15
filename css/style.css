@@ -139,6 +139,23 @@ body {
   width: 80%;
 }
 
+/* index */
+.vote {
+  display: flex;
+  flex-flow: column;
+}
+
+.vote__title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 5vh auto auto auto;
+}
+
+.index .list {
+  width: 90%;
+  margin: 5vh auto;
+}
+
 /* view-winner-venue */
 .view-winner-venue {
 
