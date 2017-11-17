@@ -1,10 +1,14 @@
-(function() {
+(async function() {
   if (document.querySelector('.vote').length === 0) return;
 
-  const afterParties = JSON.parse(localStorage.getItem("afterParties"));
+  const afterPartyRequest = await fetch("https://after-party-21427.firebaseio.com/afters.json");
+  const afterParties = await afterPartyRequest.json();
   const currentAfterPartyId = localStorage.getItem("currentAfterParty");
   const currentAfterParty = afterParties[currentAfterPartyId];
   const afterPartyVenues = currentAfterParty.venues;
+
+  const venueList = document.querySelector('#venue-list');
+  const afterPartyName = document.querySelector('#after-party-name');
 
   function createVenuesMarkup() {
     return afterPartyVenues.map((venue, index) => {
@@ -15,25 +19,27 @@
                 </li>`
     }).join("");
   }
+  
+  afterPartyVenues.innerHTML = currentAfterParty.name;
+  venueList.innerHTML = createVenuesMarkup(afterPartyVenues);
 
   const voteButtons = document.querySelectorAll('.btn-vote');
 
   voteButtons.forEach(b => {
     b.addEventListener('click', function() {
       venueId = b.getAttribute("data-venue-id");
-      votes = b.getAttribute("data-venue-votes");
+      votes = parseInt(b.getAttribute("data-venue-votes"));
       console.log(venueId);
       console.log(votes);
 
-      const url = "https://after-party-21427.firebaseio.com/afters/${currentAfterParty}/venues/${venueId}/votes.json";
+      const url = `https://after-party-21427.firebaseio.com/afters/${currentAfterPartyId}/venues/${venueId}/votes.json`;
+      console.log(url);
       fetch(url, {
         method: "PUT",
-        body: {
-          votes: votes++
-        }
+        body: JSON.stringify(votes+1),
       });
 
-      window.location.href = 'index.html';
+      //window.location.href = 'index.html';
     });
   })
 

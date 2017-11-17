@@ -4,7 +4,6 @@
   const addAfterPartyButton = document.querySelector('.add-after-party-button');
   const afterList = document.querySelector('#after-list');
 
-
   const afterPartyRequest = await fetch("https://after-party-21427.firebaseio.com/afters.json");
   const responseData = await afterPartyRequest.json();
 
@@ -15,8 +14,6 @@
                                 return after;
                               });
 
-  localStorage.setItem("afterParties", JSON.stringify(responseData));
-
   function getMostVotedVenue(venues) {
     return venues.reduce((previous, current) => previous.votes > current.votes ? previous : current);
   }
@@ -26,7 +23,7 @@
         return `<li class="list__item">
           <h2 class="list__item__title">${after.name}</h2>
           <p class="list__item__detail">${getMostVotedVenue(after.venues).name}</p>
-          <button data-after-id="${after.id}" class="btn-vote list__item__button" type="button" name="button">vote</button>
+          <button data-after-id="${after.id}" class="btn-vote list__item__button" type="button" name="button">view</button>
         </li>`
     }).join("");
   }
